@@ -1,0 +1,76 @@
+@keyframes rotateMoon {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.3;
+            }
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #000;
+            overflow: hidden;
+        }
+
+        .stars, .stars2, .stars3 {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            background: transparent;
+        }
+
+        .stars {
+            box-shadow: 100px 100px #fff, 200px 200px #fff, 300px 300px #fff, 400px 400px #fff, 500px 500px #fff, 600px 600px #fff, 700px 700px #fff, 800px 800px #fff, 900px 900px #fff, 1000px 1000px #fff;
+            animation: twinkle 1.5s infinite alternate;
+        }
+
+        .stars2 {
+            box-shadow: 150px 150px #ddd, 250px 250px #ddd, 350px 350px #ddd, 450px 450px #ddd, 550px 550px #ddd, 650px 650px #ddd, 750px 750px #ddd, 850px 850px #ddd, 950px 950px #ddd, 1050px 1050px #ddd;
+            animation: twinkle 2s infinite alternate;
+        }
+
+        .stars3 {
+            box-shadow: 120px 120px #bbb, 220px 220px #bbb, 320px 320px #bbb, 420px 420px #bbb, 520px 520px #bbb, 620px 620px #bbb, 720px 720px #bbb, 820px 820px #bbb, 920px 920px #bbb, 1020px 1020px #bbb;
+            animation: twinkle 2.5s infinite alternate;
+        }
+
+        .moon {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 100px 50px, #FFF, #CCC);
+            position: relative;
+            animation: rotateMoon 60s linear infinite;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 215, 0, 0.6), 0 0 35px rgba(255, 165, 0, 0.4), 0 0 50px rgba(255, 69, 0, 0.3);
+            z-index: 1;
+        }
+
+        .spot {
+            width: 15px;
+            height: 15px;
+            background-color: rgba(128, 128, 128, 0.6);
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        .medium { width: 10px; height: 10px; }
+
+        .spot:nth-of-type(1) { top: 20px; left: 40px; }
+        .spot:nth-of-type(2) { right: 50px; top: 60px; }
+        .spot:nth-of-type(3) { left: 30px; bottom: 20px; }
+        .spot:nth-of-type(4) { left: 60px; top: 30px; }
+        .spot:nth-of-type(5) { right: 20px; bottom: 40px; }
+        .spot:nth-of-type(6) { left: 40%; top: 50%; }
